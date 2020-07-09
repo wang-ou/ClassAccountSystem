@@ -33,7 +33,7 @@ namespace 名簿
             this.brithdayBox = new System.Windows.Forms.TextBox();
             this.familynameBox = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.Regibutton = new System.Windows.Forms.Button();
+            this.Regbutton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SexCbBox = new System.Windows.Forms.ComboBox();
@@ -80,15 +80,15 @@ namespace 名簿
             this.nameBox.TabIndex = 3;
             this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
             // 
-            // Regibutton
+            // Regbutton
             // 
-            this.Regibutton.Location = new System.Drawing.Point(293, 351);
-            this.Regibutton.Name = "Regibutton";
-            this.Regibutton.Size = new System.Drawing.Size(117, 43);
-            this.Regibutton.TabIndex = 5;
-            this.Regibutton.Text = "登録";
-            this.Regibutton.UseVisualStyleBackColor = true;
-            this.Regibutton.Click += new System.EventHandler(this.Regbutton_Click);
+            this.Regbutton.Location = new System.Drawing.Point(293, 351);
+            this.Regbutton.Name = "Regbutton";
+            this.Regbutton.Size = new System.Drawing.Size(117, 43);
+            this.Regbutton.TabIndex = 5;
+            this.Regbutton.Text = "登録";
+            this.Regbutton.UseVisualStyleBackColor = true;
+            this.Regbutton.Click += new System.EventHandler(this.Regbutton_Click);
             // 
             // label1
             // 
@@ -170,7 +170,7 @@ namespace 名簿
             this.Controls.Add(this.SexCbBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Regibutton);
+            this.Controls.Add(this.Regbutton);
             this.Controls.Add(this.nameBox);
             this.Controls.Add(this.familynameBox);
             this.Controls.Add(this.brithdayBox);
@@ -190,7 +190,7 @@ namespace 名簿
         private System.Windows.Forms.TextBox brithdayBox;
         private System.Windows.Forms.TextBox familynameBox;
         private System.Windows.Forms.TextBox nameBox;
-        private System.Windows.Forms.Button Regibutton;
+        private System.Windows.Forms.Button Regbutton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox SexCbBox;
