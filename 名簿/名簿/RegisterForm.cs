@@ -46,23 +46,23 @@ namespace 名簿
         private void SetFamilynameText()
         {
             familynameBox.Text = FamilyBoxtext;
-            familynameBox.ForeColor = Color.Gray; ;
+            familynameBox.ForeColor = Color.Gray;
         }
         private void SetNameText()
         {
             nameBox.Text = NameBoxtext;
-            nameBox.ForeColor = Color.Gray; ;
+            nameBox.ForeColor = Color.Gray;
         }
         private void SetBirthdaytext()
         {
             brithdayBox.Text = BirthdayBoxtext;
-            brithdayBox.ForeColor = Color.Gray; ;
+            brithdayBox.ForeColor = Color.Gray;
         }
 
         private void SetComboxtext()
         {
             SexCbBox.Text = Bt;
-            SexCbBox.ForeColor = Color.Gray; ;
+            SexCbBox.ForeColor = Color.Gray;
         }
         
 
@@ -126,6 +126,7 @@ namespace 名簿
                 nameBox.BackColor = Color.White;
                 brithdayBox.BackColor = Color.White;
                 SexCbBox.BackColor = Color.White;
+                RegisitInformation(classBox.Text, familynameBox.Text, nameBox.Text, brithdayBox.Text, SexCbBox.Text);
                 MessageBox.Show("登録完了");
             }
             else 
@@ -152,6 +153,11 @@ namespace 名簿
                 }
                 MessageBox.Show("登録失敗しました。入力形式に誤りがあります。");
             }
+        }
+
+        private void RegisitInformation(string Classnumber, string Familyname, string Name, string Birthday, string Gender)
+        {
+            this.InsTableAdapter1.Registarinformation(Classnumber, Familyname, Name, Birthday, Gender);
         }
 
     }

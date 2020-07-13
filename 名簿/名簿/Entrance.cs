@@ -28,5 +28,10 @@ namespace 名簿
             RegisterForm register = new RegisterForm();
             register.ShowDialog();
         }
+
+        private void Entrance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

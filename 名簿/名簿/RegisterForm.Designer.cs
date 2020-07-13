@@ -41,6 +41,9 @@ namespace 名簿
             this.Fnamelabel = new System.Windows.Forms.Label();
             this.namelabel = new System.Windows.Forms.Label();
             this.birdaylabel = new System.Windows.Forms.Label();
+            this.InsdataSet11 = new 名簿.DataSet1();
+            this.InsTableAdapter1 = new 名簿.DataSet1TableAdapters.TableTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // classBox
@@ -158,6 +161,15 @@ namespace 名簿
             this.birdaylabel.TabIndex = 12;
             this.birdaylabel.Text = "生年月日を入力してください（例：1990090）。";
             // 
+            // InsdataSet11
+            // 
+            this.InsdataSet11.DataSetName = "DataSet1";
+            this.InsdataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // InsTableAdapter1
+            // 
+            this.InsTableAdapter1.ClearBeforeFill = true;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -179,6 +191,7 @@ namespace 名簿
             this.Name = "RegisterForm";
             this.Text = "クラス名簿管理システム";
             this.Load += new System.EventHandler(this.RegisterForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,5 +211,7 @@ namespace 名簿
         private System.Windows.Forms.Label Fnamelabel;
         private System.Windows.Forms.Label namelabel;
         private System.Windows.Forms.Label birdaylabel;
+        private DataSet1 InsdataSet11;
+        private DataSet1TableAdapters.TableTableAdapter InsTableAdapter1;
     }
 }

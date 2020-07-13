@@ -121,5 +121,10 @@ namespace 名簿
             dateForm.ShowDialog();
 
         }
+
+        private void classNtexb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

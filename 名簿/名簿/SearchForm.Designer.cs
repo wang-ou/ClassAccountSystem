@@ -72,6 +72,7 @@
             this.classNtexb.Name = "classNtexb";
             this.classNtexb.Size = new System.Drawing.Size(215, 20);
             this.classNtexb.TabIndex = 3;
+            this.classNtexb.TextChanged += new System.EventHandler(this.classNtexb_TextChanged);
             this.classNtexb.Enter += new System.EventHandler(this.classNtexb_Enter);
             // 
             // nametexb
@@ -220,14 +221,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox famnametexb;
-        private System.Windows.Forms.TextBox classNtexb;
-        private System.Windows.Forms.TextBox nametexb;
-        private System.Windows.Forms.TextBox yeartexb;
-        private System.Windows.Forms.TextBox monthtexb;
-        private System.Windows.Forms.TextBox daytxtb;
+        public System.Windows.Forms.TextBox famnametexb;
+        public System.Windows.Forms.TextBox classNtexb;
+        public System.Windows.Forms.TextBox nametexb;
+        public System.Windows.Forms.TextBox yeartexb;
+        public System.Windows.Forms.TextBox monthtexb;
+        public System.Windows.Forms.TextBox daytxtb;
         private System.Windows.Forms.Button Searbutton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
