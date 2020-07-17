@@ -115,11 +115,33 @@ namespace 名簿
             }
         }
 
+        DataSet1TableAdapters.TableTableAdapter person = new DataSet1TableAdapters.TableTableAdapter();
+
         private void Searbutton_Click(object sender, EventArgs e)
         {
             DateForm dateForm = new DateForm();
-            dateForm.ShowDialog();
 
+            if (nametexb.Text != "") 
+            { 
+                dateForm.dataGridView1.DataSource = person.Search2(nametexb.Text);
+            }
+
+            if (classNtexb.Text != "")
+            { 
+                dateForm.dataGridView1.DataSource = person.Search3(classNtexb.Text);
+            }
+                
+            if (famnametexb.Text != "") 
+            {
+                dateForm.dataGridView1.DataSource = person.Search4(famnametexb.Text);
+            }
+
+            if (comboBox1.Text != "" && comboBox1.Text != "性別")
+            {
+                dateForm.dataGridView1.DataSource = person.Search6(comboBox1.Text);
+            }
+            dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件見つかりました。";
+            dateForm.ShowDialog();
         }
     }
 }

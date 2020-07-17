@@ -279,15 +279,15 @@ namespace 名簿 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class TableDataTable : global::System.Data.TypedTableBase<TableRow> {
             
-            private global::System.Data.DataColumn columnclass;
+            private global::System.Data.DataColumn columnクラス番号;
             
-            private global::System.Data.DataColumn columnfname;
+            private global::System.Data.DataColumn column苗字;
             
-            private global::System.Data.DataColumn columnname;
+            private global::System.Data.DataColumn column名前;
             
-            private global::System.Data.DataColumn columnbirthday;
+            private global::System.Data.DataColumn column生年月日;
             
-            private global::System.Data.DataColumn columngender;
+            private global::System.Data.DataColumn column性別;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -324,41 +324,41 @@ namespace 名簿 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn classColumn {
+            public global::System.Data.DataColumn クラス番号Column {
                 get {
-                    return this.columnclass;
+                    return this.columnクラス番号;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn fnameColumn {
+            public global::System.Data.DataColumn 苗字Column {
                 get {
-                    return this.columnfname;
+                    return this.column苗字;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nameColumn {
+            public global::System.Data.DataColumn 名前Column {
                 get {
-                    return this.columnname;
+                    return this.column名前;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn birthdayColumn {
+            public global::System.Data.DataColumn 生年月日Column {
                 get {
-                    return this.columnbirthday;
+                    return this.column生年月日;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn genderColumn {
+            public global::System.Data.DataColumn 性別Column {
                 get {
-                    return this.columngender;
+                    return this.column性別;
                 }
             }
             
@@ -399,14 +399,14 @@ namespace 名簿 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TableRow AddTableRow(string _class, string fname, string name, System.DateTime birthday, string gender) {
+            public TableRow AddTableRow(string クラス番号, string 苗字, string 名前, int 生年月日, string 性別) {
                 TableRow rowTableRow = ((TableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        _class,
-                        fname,
-                        name,
-                        birthday,
-                        gender};
+                        クラス番号,
+                        苗字,
+                        名前,
+                        生年月日,
+                        性別};
                 rowTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTableRow);
                 return rowTableRow;
@@ -414,9 +414,9 @@ namespace 名簿 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TableRow FindBy_class(string _class) {
+            public TableRow FindByクラス番号(string クラス番号) {
                 return ((TableRow)(this.Rows.Find(new object[] {
-                            _class})));
+                            クラス番号})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -436,41 +436,38 @@ namespace 名簿 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnclass = base.Columns["class"];
-                this.columnfname = base.Columns["fname"];
-                this.columnname = base.Columns["name"];
-                this.columnbirthday = base.Columns["birthday"];
-                this.columngender = base.Columns["gender"];
+                this.columnクラス番号 = base.Columns["クラス番号"];
+                this.column苗字 = base.Columns["苗字"];
+                this.column名前 = base.Columns["名前"];
+                this.column生年月日 = base.Columns["生年月日"];
+                this.column性別 = base.Columns["性別"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnclass = new global::System.Data.DataColumn("class", typeof(string), null, global::System.Data.MappingType.Element);
-                this.columnclass.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "classColumn");
-                this.columnclass.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnclass");
-                this.columnclass.ExtendedProperties.Add("Generator_UserColumnName", "class");
-                base.Columns.Add(this.columnclass);
-                this.columnfname = new global::System.Data.DataColumn("fname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfname);
-                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnname);
-                this.columnbirthday = new global::System.Data.DataColumn("birthday", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbirthday);
-                this.columngender = new global::System.Data.DataColumn("gender", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columngender);
+                this.columnクラス番号 = new global::System.Data.DataColumn("クラス番号", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnクラス番号);
+                this.column苗字 = new global::System.Data.DataColumn("苗字", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column苗字);
+                this.column名前 = new global::System.Data.DataColumn("名前", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column名前);
+                this.column生年月日 = new global::System.Data.DataColumn("生年月日", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column生年月日);
+                this.column性別 = new global::System.Data.DataColumn("性別", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column性別);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnclass}, true));
-                this.columnclass.AllowDBNull = false;
-                this.columnclass.Unique = true;
-                this.columnclass.MaxLength = 10;
-                this.columnfname.AllowDBNull = false;
-                this.columnfname.MaxLength = 50;
-                this.columnname.AllowDBNull = false;
-                this.columnname.MaxLength = 50;
-                this.columnbirthday.AllowDBNull = false;
-                this.columngender.AllowDBNull = false;
-                this.columngender.MaxLength = 10;
+                                this.columnクラス番号}, true));
+                this.columnクラス番号.AllowDBNull = false;
+                this.columnクラス番号.Unique = true;
+                this.columnクラス番号.MaxLength = 10;
+                this.column苗字.AllowDBNull = false;
+                this.column苗字.MaxLength = 50;
+                this.column名前.AllowDBNull = false;
+                this.column名前.MaxLength = 50;
+                this.column生年月日.AllowDBNull = false;
+                this.column性別.AllowDBNull = false;
+                this.column性別.MaxLength = 10;
                 this.ExtendedProperties.Add("Generator_RowClassName", "TableRow");
                 this.ExtendedProperties.Add("Generator_RowEvArgName", "TableRowChangeEvent");
                 this.ExtendedProperties.Add("Generator_RowEvHandlerName", "TableRowChangeEventHandler");
@@ -620,56 +617,56 @@ namespace 名簿 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string _class {
+            public string クラス番号 {
                 get {
-                    return ((string)(this[this.tableTable.classColumn]));
+                    return ((string)(this[this.tableTable.クラス番号Column]));
                 }
                 set {
-                    this[this.tableTable.classColumn] = value;
+                    this[this.tableTable.クラス番号Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string fname {
+            public string 苗字 {
                 get {
-                    return ((string)(this[this.tableTable.fnameColumn]));
+                    return ((string)(this[this.tableTable.苗字Column]));
                 }
                 set {
-                    this[this.tableTable.fnameColumn] = value;
+                    this[this.tableTable.苗字Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string name {
+            public string 名前 {
                 get {
-                    return ((string)(this[this.tableTable.nameColumn]));
+                    return ((string)(this[this.tableTable.名前Column]));
                 }
                 set {
-                    this[this.tableTable.nameColumn] = value;
+                    this[this.tableTable.名前Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime birthday {
+            public int 生年月日 {
                 get {
-                    return ((global::System.DateTime)(this[this.tableTable.birthdayColumn]));
+                    return ((int)(this[this.tableTable.生年月日Column]));
                 }
                 set {
-                    this[this.tableTable.birthdayColumn] = value;
+                    this[this.tableTable.生年月日Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string gender {
+            public string 性別 {
                 get {
-                    return ((string)(this[this.tableTable.genderColumn]));
+                    return ((string)(this[this.tableTable.性別Column]));
                 }
                 set {
-                    this[this.tableTable.genderColumn] = value;
+                    this[this.tableTable.性別Column] = value;
                 }
             }
         }
@@ -833,11 +830,11 @@ namespace 名簿.DataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Table";
-            tableMapping.ColumnMappings.Add("class", "class");
-            tableMapping.ColumnMappings.Add("fname", "fname");
-            tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("birthday", "birthday");
-            tableMapping.ColumnMappings.Add("gender", "gender");
+            tableMapping.ColumnMappings.Add("class", "クラス番号");
+            tableMapping.ColumnMappings.Add("fname", "苗字");
+            tableMapping.ColumnMappings.Add("name", "名前");
+            tableMapping.ColumnMappings.Add("birthday", "生年月日");
+            tableMapping.ColumnMappings.Add("gender", "性別");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -848,7 +845,7 @@ namespace 名簿.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_class", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_birthday", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_birthday", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -859,7 +856,7 @@ namespace 名簿.DataSet1TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
@@ -869,12 +866,12 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_class", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_fname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_birthday", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_birthday", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_gender", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -888,11 +885,51 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT class, fname, name, birthday, gender FROM dbo.[Table]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO [dbo].[Table] ([class], [fname], [name], [birthday], [gender]) VALUES" +
+                " (@class, @fname, @name, @birthday, @gender);\r\nSELECT class, fname, name, birthd" +
+                "ay, gender FROM [Table] WHERE (class = @class)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT                      class AS Expr1, fname AS Expr2, name AS Expr3, birthd" +
+                "ay AS Expr4, gender AS Expr5, [Table].*\r\nFROM                         [Table]";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT class, fname, name, birthday, gender FROM dbo.[Table] where class  like @c" +
+                "lass";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT class, fname, name, birthday, gender FROM dbo.[Table] Where name like @nam" +
+                "e";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT class, fname, name, birthday, gender FROM dbo.[Table] where fname like @fn" +
+                "ame";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT class, fname, name, birthday, gender FROM dbo.[Table] where gender like @g" +
+                "ender";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -914,6 +951,174 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.TableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.TableDataTable dataTable = new DataSet1.TableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int list(DataSet1.TableDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TableDataTable list2() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            DataSet1.TableDataTable dataTable = new DataSet1.TableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Search(DataSet1.TableDataTable dataTable, string _class) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((_class == null)) {
+                throw new global::System.ArgumentNullException("_class");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_class));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TableDataTable Search3(string _class) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((_class == null)) {
+                throw new global::System.ArgumentNullException("_class");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_class));
+            }
+            DataSet1.TableDataTable dataTable = new DataSet1.TableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Search_(DataSet1.TableDataTable dataTable, string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TableDataTable Search2(string name) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            DataSet1.TableDataTable dataTable = new DataSet1.TableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Search1(DataSet1.TableDataTable dataTable, string fname) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((fname == null)) {
+                throw new global::System.ArgumentNullException("fname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fname));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TableDataTable Search4(string fname) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((fname == null)) {
+                throw new global::System.ArgumentNullException("fname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(fname));
+            }
+            DataSet1.TableDataTable dataTable = new DataSet1.TableDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Search5(DataSet1.TableDataTable dataTable, string gender) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((gender == null)) {
+                throw new global::System.ArgumentNullException("gender");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(gender));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.TableDataTable Search6(string gender) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((gender == null)) {
+                throw new global::System.ArgumentNullException("gender");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(gender));
+            }
             DataSet1.TableDataTable dataTable = new DataSet1.TableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -952,7 +1157,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_class, string Original_fname, string Original_name, System.DateTime Original_birthday, string Original_gender) {
+        public virtual int Delete(string Original_class, string Original_fname, string Original_name, int Original_birthday, string Original_gender) {
             if ((Original_class == null)) {
                 throw new global::System.ArgumentNullException("Original_class");
             }
@@ -971,7 +1176,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_name));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_birthday));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_birthday));
             if ((Original_gender == null)) {
                 throw new global::System.ArgumentNullException("Original_gender");
             }
@@ -998,7 +1203,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string _class, string fname, string name, System.DateTime birthday, string gender) {
+        public virtual int Insert(string _class, string fname, string name, int birthday, string gender) {
             if ((_class == null)) {
                 throw new global::System.ArgumentNullException("_class");
             }
@@ -1017,7 +1222,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(name));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(birthday));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(birthday));
             if ((gender == null)) {
                 throw new global::System.ArgumentNullException("gender");
             }
@@ -1044,7 +1249,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string _class, string fname, string name, System.DateTime birthday, string gender, string Original_class, string Original_fname, string Original_name, System.DateTime Original_birthday, string Original_gender) {
+        public virtual int Update(string _class, string fname, string name, int birthday, string gender, string Original_class, string Original_fname, string Original_name, int Original_birthday, string Original_gender) {
             if ((_class == null)) {
                 throw new global::System.ArgumentNullException("_class");
             }
@@ -1063,7 +1268,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(name));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(birthday));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(birthday));
             if ((gender == null)) {
                 throw new global::System.ArgumentNullException("gender");
             }
@@ -1088,7 +1293,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_name));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_birthday));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_birthday));
             if ((Original_gender == null)) {
                 throw new global::System.ArgumentNullException("Original_gender");
             }
@@ -1114,9 +1319,49 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string fname, string name, System.DateTime birthday, string gender, string Original_class, string Original_fname, string Original_name, System.DateTime Original_birthday, string Original_gender) {
-            return this.Update(Original_class, fname, name, birthday, gender, Original_class, Original_fname, Original_name, Original_birthday, Original_gender);
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int Insert1(string _class, string fname, string name, int birthday, string gender) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((_class == null)) {
+                throw new global::System.ArgumentNullException("_class");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(_class));
+            }
+            if ((fname == null)) {
+                throw new global::System.ArgumentNullException("fname");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(fname));
+            }
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(name));
+            }
+            command.Parameters[3].Value = ((int)(birthday));
+            if ((gender == null)) {
+                throw new global::System.ArgumentNullException("gender");
+            }
+            else {
+                command.Parameters[4].Value = ((string)(gender));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

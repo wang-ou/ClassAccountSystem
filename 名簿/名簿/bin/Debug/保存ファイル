@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<DataSet1 xmlns="http://tempuri.org/DataSet1.xsd">
+  <Table>
+    <クラス番号>05        </クラス番号>
+    <苗字>m</苗字>
+    <名前>k</名前>
+    <生年月日>20200202</生年月日>
+    <性別>女(woman)  </性別>
+    <Expr1>05        </Expr1>
+    <Expr2>m</Expr2>
+    <Expr3>k</Expr3>
+    <Expr4>20200202</Expr4>
+    <Expr5>女(woman)  </Expr5>
+  </Table>
+</DataSet1>

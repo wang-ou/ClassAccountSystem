@@ -28,5 +28,15 @@ namespace 名簿
             RegisterForm register = new RegisterForm();
             register.ShowDialog();
         }
+
+        private void Entrance_Load(object sender, EventArgs e)
+        {
+            //string FileName = "保存ファイル";
+            //DateForm dateForm = new DateForm();
+            //DataSet1 ds = new DataSet1();
+            //ds.ReadXml(FileName);
+            //dateForm.dataGridView1.DataSource = ds;
+            //dateForm.dataGridView1.DataBind();
+        }
     }
 }

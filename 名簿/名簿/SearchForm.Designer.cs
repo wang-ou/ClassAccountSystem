@@ -126,12 +126,12 @@
             // 
             // comboBox1
             // 
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "男(man)",
-            "女(woman)"});
+            "女(woman)",
+            ""});
             this.comboBox1.Location = new System.Drawing.Point(68, 281);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(75, 19);
@@ -222,7 +222,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox famnametexb;
         private System.Windows.Forms.TextBox classNtexb;
-        private System.Windows.Forms.TextBox nametexb;
         private System.Windows.Forms.TextBox yeartexb;
         private System.Windows.Forms.TextBox monthtexb;
         private System.Windows.Forms.TextBox daytxtb;
@@ -233,5 +232,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox nametexb;
     }
 }

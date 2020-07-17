@@ -74,6 +74,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Entrance";
             this.Text = "クラス名簿管理システム";
+            this.Load += new System.EventHandler(this.Entrance_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
