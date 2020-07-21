@@ -27,12 +27,11 @@ namespace 名簿
             SetMonthtext();
             SetDaytext();
             SetNametext();
-            }
+        }
         private void SearchForm_Load(object sender, EventArgs e)
         {
             this.ActiveControl = label1;
         }
-
         private void SetClassNtext()
         {
             classNtexb.Text = ClassNtext;
@@ -105,7 +104,6 @@ namespace 名簿
                 daytxtb.ForeColor = Color.Black;
             }
         }
-
         private void nametexb_Enter(object sender, EventArgs e)
         {
             if (nametexb.Text == Nametext)
@@ -121,24 +119,24 @@ namespace 名簿
         {
             DateForm dateForm = new DateForm();
 
-            if (nametexb.Text != "") 
-            { 
-                dateForm.dataGridView1.DataSource = person.Search2(nametexb.Text);
+            if (famnametexb.Text != "" || classNtexb.Text != "" || nametexb.Text != "")
+            {
+                dateForm.dataGridView1.DataSource = person.Search2(Convert.ToInt32("0" + classNtexb.Text), famnametexb.Text, nametexb.Text, comboBox1.Text);
             }
 
             if (classNtexb.Text != "")
-            { 
-                dateForm.dataGridView1.DataSource = person.Search3(classNtexb.Text);
+            {
+                //dateForm.dataGridView1.DataSource = person.Search3(classNtexb.Text);
             }
                 
             if (famnametexb.Text != "") 
             {
-                dateForm.dataGridView1.DataSource = person.Search4(famnametexb.Text);
+                //dateForm.dataGridView1.DataSource = person.Search4(famnametexb.Text);
             }
 
             if (comboBox1.Text != "" && comboBox1.Text != "性別")
             {
-                dateForm.dataGridView1.DataSource = person.Search6(comboBox1.Text);
+                //dateForm.dataGridView1.DataSource = person.Search6(comboBox1.Text);
             }
             dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件見つかりました。";
             dateForm.ShowDialog();

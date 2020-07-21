@@ -1,0 +1,15 @@
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\bin\Release\DB.mdf
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\bin\Release\DB_log.ldf
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\bin\Release\名簿.exe.config
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\bin\Release\名簿.exe
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\bin\Release\名簿.pdb
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.csprojAssemblyReference.cache
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.DateForm.resources
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.Entrance.resources
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.Properties.Resources.resources
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.RegisterForm.resources
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.SearchForm.resources
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.csproj.GenerateResource.cache
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.exe
+C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Release\名簿.pdb

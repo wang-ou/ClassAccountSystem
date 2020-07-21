@@ -13,7 +13,7 @@ namespace 名簿
 {
     public partial class RegisterForm : Form
     {
-        private const String classBoxtext = "クラス番号を入力してください（例：01番）。";
+        private const String classBoxtext = "学生番号を入力してください（例：01番）。";
         private const String FamilyBoxtext = "苗字";
         private const String NameBoxtext = "名前";
         private const String BirthdayBoxtext = "生年月日を入力してください（例：1990090）。";
@@ -127,24 +127,31 @@ namespace 名簿
                 birthdayT == true &&
                 sexT == true)
             {
-                person.Insert(classBox.Text, familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
+                person.Insert(int.Parse(classBox.Text), familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
 
                 DateForm dateForm = new DateForm();
                 dateForm.dataGridView1.DataSource = person.list2();
                 dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件登録されました。";
                 dateForm.ShowDialog();
                 MessageBox.Show("登録完了");
+                //switch　(MessageBox.Show("登録完了","提示",MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1))
+                {  
+                    //case DialogResult.Cancel:
+                    //MessageBox.Show("キャンセル");
 
-                /*DateTime.Now.ToString("yyMMddhhmmss");*/
-                string FileName = "保存ファイル";
-                //Filter = "XML文件(*.xml)|*.xml";
-                    DataTable dt = (DataTable)dateForm.dataGridView1.DataSource;
-                    DataSet1 ds = new DataSet1();
-                    ds.Tables.Add(dt);
-                    ds.WriteXml(FileName);
+                    //break;
+                    //case DialogResult.Yes :
+                    //MessageBox.Show("OK");
+                        //person.Update1( familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text, classBox.Text);
+                    //break;
+                    //case DialogResult.No :
+                    //MessageBox.Show("いいえ");
+                    //break;
+                }
+
 
                 foreach (Control item in Controls) if (item is TextBox) item.Text = "";
-                SexCbBox.Items.Remove(SexCbBox.SelectedIndex);
+                //SexCbBox.Items.Remove(SexCbBox.SelectedIndex);
             }
             else 
             {
@@ -155,7 +162,9 @@ namespace 名簿
         #region
         private bool classBox_TextCheck()
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(classBox.Text, @"^[0-9]{2}$") )
+            if (System.Text.RegularExpressions.Regex.IsMatch(classBox.Text, @"^[0-9]{2}$"))
+                /*||*/
+               //System.Text.RegularExpressions.Regex.IsMatch(classBox.Text,  "01番"))
             {
                 classBox.BackColor = Color.White;
                 return true;

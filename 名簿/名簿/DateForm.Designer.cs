@@ -74,7 +74,6 @@
             this.Controls.Add(this.label1);
             this.Name = "DateForm";
             this.Text = "クラス名簿管理システム";
-            this.Load += new System.EventHandler(this.DateForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             this.ResumeLayout(false);

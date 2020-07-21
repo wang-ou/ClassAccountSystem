@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Registerbutton = new System.Windows.Forms.Button();
             this.Searchbutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -64,11 +65,22 @@
             this.Searchbutton.UseVisualStyleBackColor = true;
             this.Searchbutton.Click += new System.EventHandler(this.Searchbutton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(276, 248);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Entrance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 411);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Searchbutton);
             this.Controls.Add(this.Registerbutton);
             this.Controls.Add(this.label1);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Registerbutton;
         private System.Windows.Forms.Button Searchbutton;
+        private System.Windows.Forms.Button button1;
     }
 }
