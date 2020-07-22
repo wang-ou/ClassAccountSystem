@@ -127,30 +127,32 @@ namespace 名簿
                 birthdayT == true &&
                 sexT == true)
             {
-                person.Insert(int.Parse(classBox.Text), familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
+                string classBoxText = System.Text.RegularExpressions.Regex.Replace(classBox.Text, @"[^0-9]+", "");
+
+                person.Insert(int.Parse(classBoxText), familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
 
                 DateForm dateForm = new DateForm();
                 dateForm.dataGridView1.DataSource = person.list2();
-                dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件登録されました。";
+                dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件登録されました。"; 
                 dateForm.ShowDialog();
                 MessageBox.Show("登録完了");
+
                 //switch　(MessageBox.Show("登録完了","提示",MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1))
-                {  
-                    //case DialogResult.Cancel:
-                    //MessageBox.Show("キャンセル");
+                //{  
+                //case DialogResult.Cancel:
+                //MessageBox.Show("キャンセル");
 
-                    //break;
-                    //case DialogResult.Yes :
-                    //MessageBox.Show("OK");
-                        //person.Update1( familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text, classBox.Text);
-                    //break;
-                    //case DialogResult.No :
-                    //MessageBox.Show("いいえ");
-                    //break;
-                }
+                //break;
+                //case DialogResult.Yes :
+                //MessageBox.Show("OK");
+                person.Update1(int.Parse(classBox.Text),familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
+                //break;
+                //case DialogResult.No :
+                //MessageBox.Show("いいえ");
+                //break;
+                //}
 
-
-                foreach (Control item in Controls) if (item is TextBox) item.Text = "";
+                //foreach (Control item in Controls) if (item is TextBox) item.Text = "";
                 //SexCbBox.Items.Remove(SexCbBox.SelectedIndex);
             }
             else 
@@ -162,9 +164,8 @@ namespace 名簿
         #region
         private bool classBox_TextCheck()
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(classBox.Text, @"^[0-9]{2}$"))
-                /*||*/
-               //System.Text.RegularExpressions.Regex.IsMatch(classBox.Text,  "01番"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(classBox.Text, @"^[0-9]{2}$") ||
+                System.Text.RegularExpressions.Regex.IsMatch(classBox.Text, @"^[0-9]{2}番$"))
             {
                 classBox.BackColor = Color.White;
                 return true;

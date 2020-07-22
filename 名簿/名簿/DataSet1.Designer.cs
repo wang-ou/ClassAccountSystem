@@ -959,7 +959,7 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT class, fname, name, birthday, gender FROM dbo.[Table]";
@@ -984,12 +984,30 @@ SELECT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)"
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"SELECT                      class, fname, name, birthday, gender
 FROM                         [Table]
-WHERE                   (@class = '' OR class = @class) AND (@fname = '' OR @fname like'（例：山本）'  OR  fname = @fname) AND (@name = '' OR  name = '（例：太郎）'  OR name = @name) AND (@gender = '' OR gender = @gender)";
+WHERE                       (@class = '' OR
+                                      class = @class) AND (@fname = '' OR
+                                      @fname = '（例：山本）' OR
+                                      fname = @fname) AND (@name = '' OR
+                                      name = '（例：太郎）' OR
+                                      name = @name) AND (@gender = '' OR
+                                      gender = @gender)AND (@birthday = ''  OR LEFT(birthday ,4) = LEFT(@birthday ,4) OR RIGHT(birthday ,2) = RIGHT(@birthday ,2) OR SUBSTRING(cast(birthday as varchar(9)),5,2)= SUBSTRING(cast(@birthday as varchar(9)),5,2));";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE                    [Table]\r\nSET                              class = @clas" +
+                "s, fname = @fname, name = @name, birthday = @birthday, gender = @gender;  \r\nSELE" +
+                "CT class, fname, name, birthday, gender FROM [Table] WHERE (class = @class)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@class", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "class", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "fname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@birthday", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "birthday", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@gender", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1044,7 +1062,7 @@ WHERE                   (@class = '' OR class = @class) AND (@fname = '' OR @fna
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int Search1(DataSet1.TableDataTable dataTable, int _class, string fname, string name, string gender) {
+        public virtual int Search1(DataSet1.TableDataTable dataTable, int _class, string fname, string name, string gender, string birthday) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(_class));
             if ((fname == null)) {
@@ -1064,6 +1082,12 @@ WHERE                   (@class = '' OR class = @class) AND (@fname = '' OR @fna
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = ((string)(gender));
+            }
+            if ((birthday == null)) {
+                throw new global::System.ArgumentNullException("birthday");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(birthday));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1076,7 +1100,7 @@ WHERE                   (@class = '' OR class = @class) AND (@fname = '' OR @fna
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.TableDataTable Search2(int _class, string fname, string name, string gender) {
+        public virtual DataSet1.TableDataTable Search2(int _class, string fname, string name, string gender, string birthday) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(_class));
             if ((fname == null)) {
@@ -1096,6 +1120,12 @@ WHERE                   (@class = '' OR class = @class) AND (@fname = '' OR @fna
             }
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = ((string)(gender));
+            }
+            if ((birthday == null)) {
+                throw new global::System.ArgumentNullException("birthday");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(birthday));
             }
             DataSet1.TableDataTable dataTable = new DataSet1.TableDataTable();
             this.Adapter.Fill(dataTable);
@@ -1316,6 +1346,54 @@ WHERE                   (@class = '' OR class = @class) AND (@fname = '' OR @fna
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int Insert1(int _class, string fname, string name, global::System.Nullable<int> birthday, string gender) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(_class));
+            if ((fname == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(fname));
+            }
+            if ((name == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(name));
+            }
+            if ((birthday.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(birthday.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((gender == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(gender));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update1(int _class, string fname, string name, global::System.Nullable<int> birthday, string gender) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(_class));
             if ((fname == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
