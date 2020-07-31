@@ -58,9 +58,8 @@
             // 
             this.famnametexb.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.famnametexb.Location = new System.Drawing.Point(68, 179);
-            this.famnametexb.Multiline = true;
             this.famnametexb.Name = "famnametexb";
-            this.famnametexb.Size = new System.Drawing.Size(75, 20);
+            this.famnametexb.Size = new System.Drawing.Size(75, 19);
             this.famnametexb.TabIndex = 2;
             this.famnametexb.Enter += new System.EventHandler(this.famnametexb_Enter);
             // 
@@ -68,9 +67,8 @@
             // 
             this.classNtexb.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.classNtexb.Location = new System.Drawing.Point(68, 135);
-            this.classNtexb.Multiline = true;
             this.classNtexb.Name = "classNtexb";
-            this.classNtexb.Size = new System.Drawing.Size(215, 20);
+            this.classNtexb.Size = new System.Drawing.Size(215, 19);
             this.classNtexb.TabIndex = 3;
             this.classNtexb.Enter += new System.EventHandler(this.classNtexb_Enter);
             // 
@@ -78,9 +76,8 @@
             // 
             this.nametexb.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.nametexb.Location = new System.Drawing.Point(208, 179);
-            this.nametexb.Multiline = true;
             this.nametexb.Name = "nametexb";
-            this.nametexb.Size = new System.Drawing.Size(75, 20);
+            this.nametexb.Size = new System.Drawing.Size(75, 19);
             this.nametexb.TabIndex = 4;
             this.nametexb.Enter += new System.EventHandler(this.nametexb_Enter);
             // 
@@ -88,9 +85,9 @@
             // 
             this.yeartexb.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.yeartexb.Location = new System.Drawing.Point(68, 228);
-            this.yeartexb.Multiline = true;
+            this.yeartexb.MaxLength = 4;
             this.yeartexb.Name = "yeartexb";
-            this.yeartexb.Size = new System.Drawing.Size(60, 20);
+            this.yeartexb.Size = new System.Drawing.Size(60, 19);
             this.yeartexb.TabIndex = 5;
             this.yeartexb.Enter += new System.EventHandler(this.yeartexb_Enter);
             // 
@@ -98,19 +95,20 @@
             // 
             this.monthtexb.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.monthtexb.Location = new System.Drawing.Point(144, 228);
-            this.monthtexb.Multiline = true;
+            this.monthtexb.MaxLength = 2;
             this.monthtexb.Name = "monthtexb";
-            this.monthtexb.Size = new System.Drawing.Size(60, 20);
+            this.monthtexb.Size = new System.Drawing.Size(60, 19);
             this.monthtexb.TabIndex = 6;
             this.monthtexb.Enter += new System.EventHandler(this.monthtexb_Enter);
+            //this.monthtexb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.monthtexb_KeyPress);
             // 
             // daytxtb
             // 
             this.daytxtb.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.daytxtb.Location = new System.Drawing.Point(223, 228);
-            this.daytxtb.Multiline = true;
+            this.daytxtb.MaxLength = 2;
             this.daytxtb.Name = "daytxtb";
-            this.daytxtb.Size = new System.Drawing.Size(60, 20);
+            this.daytxtb.Size = new System.Drawing.Size(60, 19);
             this.daytxtb.TabIndex = 7;
             this.daytxtb.Enter += new System.EventHandler(this.daytxtb_Enter);
             // 
@@ -143,9 +141,9 @@
             this.label2.Font = new System.Drawing.Font("MS UI Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(65, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 11;
-            this.label2.Text = "クラス番号";
+            this.label2.Text = "学生番号";
             // 
             // label3
             // 

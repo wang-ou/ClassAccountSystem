@@ -13,10 +13,11 @@ namespace 名簿
 {
     public partial class RegisterForm : Form
     {
-        private const String classBoxtext = "学生番号を入力してください（例：01番）。";
+        //textbox入力提示文　定数
+        private const String classBoxtext = "学生番号を入力してください(例：01番)";
         private const String FamilyBoxtext = "苗字";
         private const String NameBoxtext = "名前";
-        private const String BirthdayBoxtext = "生年月日を入力してください（例：1990090）。";
+        private const String BirthdayBoxtext = "生年月日を入力してください(例：19900909)";
         private const String Bt = "性別";
 
         DataSet1TableAdapters.TableTableAdapter person = new DataSet1TableAdapters.TableTableAdapter();
@@ -29,6 +30,7 @@ namespace 名簿
             SetNameText();
             SetBirthdaytext();
             SetComboxtext();
+
         }
 
         private void RegisterForm_Load(object sender, EventArgs e)
@@ -38,19 +40,18 @@ namespace 名簿
             Fnamelabel.Visible = false;
             namelabel.Visible = false;
             birdaylabel.Visible = false;
-
         }
 
         #region
         private void SetclassBoxText()
-        {   
-            classBox.Text = classBoxtext; 
+        {
+            classBox.Text = classBoxtext;
             classBox.ForeColor = Color.Gray;
         }
         private void SetFamilynameText()
         {
             familynameBox.Text = FamilyBoxtext;
-            familynameBox.ForeColor = Color.Gray; 
+            familynameBox.ForeColor = Color.Gray;
         }
         private void SetNameText()
         {
@@ -60,13 +61,13 @@ namespace 名簿
         private void SetBirthdaytext()
         {
             brithdayBox.Text = BirthdayBoxtext;
-            brithdayBox.ForeColor = Color.Gray; 
+            brithdayBox.ForeColor = Color.Gray;
         }
 
         private void SetComboxtext()
         {
             SexCbBox.Text = Bt;
-            SexCbBox.ForeColor = Color.Gray; 
+            SexCbBox.ForeColor = Color.Gray;
         }
         #endregion
 
@@ -113,56 +114,74 @@ namespace 名簿
         }
         #endregion
 
+        //登録ボタンを押した処理
+        #region
         private void Regbutton_Click(object sender, EventArgs e)
         {
-            bool classT = classBox_TextCheck();
-            bool nameT = nameBox_TextCheck();
-            bool familyT = familynameBox_TextCheck();
-            bool birthdayT = brithdayBox_TextCheck();
-            bool sexT = sexCbBox_SelectCheck();
-
-            if (classT == true &&
-                nameT == true &&
-                familyT == true &&
-                birthdayT == true &&
-                sexT == true)
+            try
             {
-                string classBoxText = System.Text.RegularExpressions.Regex.Replace(classBox.Text, @"[^0-9]+", "");
+                bool classT = classBox_TextCheck();
+                bool nameT = nameBox_TextCheck();
+                bool familyT = familynameBox_TextCheck();
+                bool birthdayT = brithdayBox_TextCheck();
+                bool sexT = sexCbBox_SelectCheck();
 
-                person.Insert(int.Parse(classBoxText), familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
+                if (classT == true &&
+                    nameT == true &&
+                    familyT == true &&
+                    birthdayT == true &&
+                    sexT == true)
+                {
+                    string classText = System.Text.RegularExpressions.Regex.Replace(classBox.Text, @"[^0-9]+", "");                   
+                    person.Insert1(int.Parse('0' + classText), familynameBox.Text, nameBox.Text, int.Parse('0' + brithdayBox.Text), SexCbBox.Text);
+                    DateForm dateForm = new DateForm();
+                    dateForm.dataGridView1.DataSource = person.list2();
+                    dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件登録されました";
+                    dateForm.ShowDialog();
+                    //MessageBox.Show("登録完了");
 
-                DateForm dateForm = new DateForm();
-                dateForm.dataGridView1.DataSource = person.list2();
-                dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件登録されました。"; 
-                dateForm.ShowDialog();
-                MessageBox.Show("登録完了");
+                    switch (MessageBox.Show("現在の情報を名簿に登録しました。登録を完了しますか。", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1))
+                    {
+                        //case DialogResult.Cancel:
+                        //    //最後に登録した情報を削除する
+                        //    person.Delete(int.Parse(classText), familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
+                        //    MessageBox.Show("現在の情報を名簿から削除しました");
+                        //    break;
 
-                //switch　(MessageBox.Show("登録完了","提示",MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1))
-                //{  
-                //case DialogResult.Cancel:
-                //MessageBox.Show("キャンセル");
+                        case DialogResult.Yes:
+                            this.Close(); //登録フォームを閉じる
+                            MessageBox.Show("「クラス名簿の登録フォーム」を閉じます");
+                            break;
 
-                //break;
-                //case DialogResult.Yes :
-                //MessageBox.Show("OK");
-                person.Update1(int.Parse(classBox.Text),familynameBox.Text, nameBox.Text, int.Parse(brithdayBox.Text), SexCbBox.Text);
-                //break;
-                //case DialogResult.No :
-                //MessageBox.Show("いいえ");
-                //break;
-                //}
-
-                //foreach (Control item in Controls) if (item is TextBox) item.Text = "";
-                //SexCbBox.Items.Remove(SexCbBox.SelectedIndex);
+                        case DialogResult.No:
+                            foreach (Control item in Controls) if (item is TextBox) item.Text = "";//textboxをクリアし、続いて登録
+                            this.SexCbBox.SelectedIndex = -1;
+                            MessageBox.Show("続いて登録してください");
+                            break;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("登録失敗しました。入力形式に誤りがあります。");
+                }
             }
-            else 
+
+            catch (SqlException ex)
             {
-                MessageBox.Show("登録失敗しました。入力形式に誤りがあります。");
+                if (ex.Number == 2627)
+                {
+                    MessageBox.Show("学生番号重複しています");
+                }
+                else
+                {
+                    throw ex;
+                }
             }
         }
+        #endregion
 
         #region
-        private bool classBox_TextCheck()
+        public bool classBox_TextCheck()
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(classBox.Text, @"^[0-9]{2}$") ||
                 System.Text.RegularExpressions.Regex.IsMatch(classBox.Text, @"^[0-9]{2}番$"))
@@ -218,9 +237,9 @@ namespace 名簿
             }
         }
 
-        public bool brithdayBox_TextCheck() 
+        public bool brithdayBox_TextCheck()
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(brithdayBox.Text, @"^[0-9]{8}$") )
+            if (System.Text.RegularExpressions.Regex.IsMatch(brithdayBox.Text, @"^[0-9]{8}$"))
             {
                 brithdayBox.BackColor = Color.White;
                 return true;
@@ -246,5 +265,17 @@ namespace 名簿
             }
         }
         #endregion
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if ((ActiveControl is ComboBox || ActiveControl is TextBox) &&
+                keyData == Keys.Enter)
+            {
+                keyData = Keys.Tab;
+            }
+            return base.ProcessDialogKey(keyData);
+        }
     }
 }
+
+

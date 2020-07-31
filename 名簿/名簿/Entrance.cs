@@ -13,6 +13,8 @@ namespace 名簿
 {
     public partial class Entrance : Form
     {
+        DataSet1TableAdapters.TableTableAdapter person = new DataSet1TableAdapters.TableTableAdapter();
+
         public Entrance()
         {
             InitializeComponent();
@@ -30,15 +32,18 @@ namespace 名簿
             register.ShowDialog();
         }
 
-        private void Entrance_Load(object sender, EventArgs e)
+        private void listbutton_Click(object sender, EventArgs e)
         {
-
+            DateForm dateForm = new DateForm();
+            dateForm.dataGridView1.DataSource = person.list2();
+            dateForm.label1.Text = dateForm.dataGridView1.Rows.Count + "件登録されました";
+            dateForm.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Entrance_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-
+            if(MessageBox.Show("「クラス名簿管理システム」を終了しますか。","提示",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.No)
+            e.Cancel = true;
         }
     }
 }

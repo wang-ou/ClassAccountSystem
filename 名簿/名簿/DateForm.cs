@@ -13,28 +13,19 @@ namespace 名簿
 {
     public partial class DateForm : Form
     {
-
-        static DataSet1 db;
-
-        protected static DataSet1 App
-        {
-            get
-            {
-                if (db == null)
-                    db = new DataSet1();
-                return db;
-            }
-        }
+        DataSet1TableAdapters.TableTableAdapter person = new DataSet1TableAdapters.TableTableAdapter();
 
         public DateForm()
         {
             InitializeComponent();
         }
 
-        DataSet1TableAdapters.TableTableAdapter person = new DataSet1TableAdapters.TableTableAdapter();
-
-        private void DateForm_Load(object sender, EventArgs e)
-        {
-        }
-    }   
+        #region
+        //private void correctbutton_Click(object sender, EventArgs e)
+        //{
+        //    RegisterForm registerForm = new RegisterForm();
+        //    person.Update1(registerForm.familynameBox.Text,registerForm.nameBox.Text,int.Parse(registerForm.brithdayBox.Text), registerForm.SexCbBox.Text,int.Parse(registerForm.classBox.Text));
+        //}
+        #endregion
+    }
 }
