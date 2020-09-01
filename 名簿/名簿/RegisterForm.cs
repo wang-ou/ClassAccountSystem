@@ -19,6 +19,12 @@ namespace 名簿
         private const String BirthdayBoxtext = "生年月日を入力してください（例：1990090）";
         private const String Bt = "性別";
 
+        private string classresult = "";
+        private string fnameresult = "";
+        private string nameresult = "";
+        private string birthdayresult = "";
+        private string genderresult = "";
+
         public RegisterForm()
         {
             InitializeComponent();
@@ -113,41 +119,35 @@ namespace 名簿
             //SqlCommand cmd = new SqlCommand("insert into 表名（名字，密码）values (@username,@password)");
             //cmd.Parameters.AddWithValue("@username", classBox.Text);
             //cmd.Parameters.AddWithValue("@password", familynameBox.Text);
-
-            if (
-               classBox.Text != null &&
-               familynameBox.Text != null &&
-               nameBox.Text != null &&
-               brithdayBox.Text != null &&
-               SexCbBox.SelectedIndex != -1) 
+            if (RegisterCheck(classBox.Text, familynameBox.Text, nameBox.Text, brithdayBox.Text, SexCbBox.Text) == true) 
             {
                 classBox.BackColor = Color.White;
                 familynameBox.BackColor = Color.White;
                 nameBox.BackColor = Color.White;
                 brithdayBox.BackColor = Color.White;
                 SexCbBox.BackColor = Color.White;
-                RegisitInformation(classBox.Text, familynameBox.Text, nameBox.Text, brithdayBox.Text, SexCbBox.Text);
+                RegisitInformation(classresult,fnameresult, nameresult,birthdayresult, genderresult);
                 MessageBox.Show("登録完了");
             }
             else 
             {
-                if (classBox.Text == string.Empty)
+                if (classresult == "")
                 {
                     classBox.BackColor = Color.Red;
                 }
-                if (familynameBox.Text == string.Empty)
+                if (fnameresult == "")
                 {
                     familynameBox.BackColor = Color.Red;
                 }
-                if (nameBox.Text == string.Empty)
+                if (nameresult == "")
                 {
                     nameBox.BackColor = Color.Red;
                 }
-                if (brithdayBox.Text == string.Empty)
+                if (birthdayresult == "")
                 {
                     brithdayBox.BackColor = Color.Red;
                 }
-                if(SexCbBox.SelectedIndex == -1)
+                if(genderresult == "")
                 {
                     SexCbBox.BackColor = Color.Red;
                 }
@@ -157,8 +157,50 @@ namespace 名簿
 
         private void RegisitInformation(string Classnumber, string Familyname, string Name, string Birthday, string Gender)
         {
-            this.InsTableAdapter1.Registarinformation(Classnumber, Familyname, Name, Birthday, Gender);
+            this.InsTableAdapter1.Registarinformation(Classnumber, Familyname, Name, Gender, Birthday);
+            this.InsTableAdapter1.Update(InsdataSet11);
+
         }
 
+        private void nameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool RegisterCheck(string classtex, string fnametex, string nametex, string birthtex, string gendertex)
+        {
+            Datacheck dtchk = new Datacheck();
+            if(classtex != classBoxtext)
+            {
+                classresult = dtchk.Classcheck(classtex);
+            }
+
+            if (fnametex != FamilyBoxtext)
+            {
+                fnameresult = dtchk.fnamecheck(fnametex);
+            }
+
+            if(nametex != NameBoxtext)
+            {
+                nameresult = dtchk.namecheck(nametex);
+            }
+
+            if(birthtex != BirthdayBoxtext)
+            {
+                birthdayresult = dtchk.birthdaycheck(birthtex);
+            }
+
+            if(gendertex != Bt)
+            {
+                genderresult = dtchk.gendercheck(gendertex);
+            }
+
+            if(classresult != "" && fnameresult != "" && nameresult != "" && birthdayresult != "" && genderresult != "")
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

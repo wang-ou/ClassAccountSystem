@@ -36,12 +36,15 @@
             this.monthtexb = new System.Windows.Forms.TextBox();
             this.daytxtb = new System.Windows.Forms.TextBox();
             this.Searbutton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.gendercomboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.InsdataSet11 = new 名簿.DataSet1();
+            this.InsTableAdapter1 = new 名簿.DataSet1TableAdapters.TableTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -83,6 +86,7 @@
             this.nametexb.Name = "nametexb";
             this.nametexb.Size = new System.Drawing.Size(75, 20);
             this.nametexb.TabIndex = 4;
+            this.nametexb.TextChanged += new System.EventHandler(this.nametexb_TextChanged);
             this.nametexb.Enter += new System.EventHandler(this.nametexb_Enter);
             // 
             // yeartexb
@@ -125,18 +129,18 @@
             this.Searbutton.UseVisualStyleBackColor = true;
             this.Searbutton.Click += new System.EventHandler(this.Searbutton_Click);
             // 
-            // comboBox1
+            // gendercomboBox
             // 
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.gendercomboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.gendercomboBox.Font = new System.Drawing.Font("MS UI Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.gendercomboBox.FormattingEnabled = true;
+            this.gendercomboBox.Items.AddRange(new object[] {
             "男(man)",
             "女(woman)"});
-            this.comboBox1.Location = new System.Drawing.Point(68, 281);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(75, 19);
-            this.comboBox1.TabIndex = 10;
+            this.gendercomboBox.Location = new System.Drawing.Point(68, 281);
+            this.gendercomboBox.Name = "gendercomboBox";
+            this.gendercomboBox.Size = new System.Drawing.Size(75, 19);
+            this.gendercomboBox.TabIndex = 10;
             // 
             // label2
             // 
@@ -188,6 +192,15 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "性別";
             // 
+            // InsdataSet11
+            // 
+            this.InsdataSet11.DataSetName = "DataSet1";
+            this.InsdataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // InsTableAdapter1
+            // 
+            this.InsTableAdapter1.ClearBeforeFill = true;
+            // 
             // SearchForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
@@ -198,7 +211,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.gendercomboBox);
             this.Controls.Add(this.Searbutton);
             this.Controls.Add(this.daytxtb);
             this.Controls.Add(this.monthtexb);
@@ -213,6 +226,7 @@
             this.Name = "SearchForm";
             this.Text = "クラス名簿管理システム";
             this.Load += new System.EventHandler(this.SearchForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,11 +242,13 @@
         public System.Windows.Forms.TextBox monthtexb;
         public System.Windows.Forms.TextBox daytxtb;
         private System.Windows.Forms.Button Searbutton;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox gendercomboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        public DataSet1 InsdataSet11;
+        private DataSet1TableAdapters.TableTableAdapter InsTableAdapter1;
     }
 }

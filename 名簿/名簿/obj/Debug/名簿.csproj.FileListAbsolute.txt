@@ -28,8 +28,6 @@ C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.csproj
 C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.exe
 C:\Users\user\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.pdb
-C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\bin\Debug\DB.mdf
-C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\bin\Debug\DB_log.ldf
 C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\bin\Debug\名簿.exe.config
 C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\bin\Debug\名簿.exe
 C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\bin\Debug\名簿.pdb
@@ -43,3 +41,5 @@ C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.cspro
 C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.exe
 C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\obj\Debug\名簿.pdb
+C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\bin\Debug\ClassList.mdf
+C:\Users\admin\Documents\ClassAccountSystem\名簿\名簿\bin\Debug\ClassList_log.ldf

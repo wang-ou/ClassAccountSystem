@@ -30,23 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.InsdataSet11 = new 名簿.DataSet1();
-            this.InsTableAdapter1 = new 名簿.DataSet1TableAdapters.TableTableAdapter();
-            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.クラス番号DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.苗字DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.名前DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.生年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.性別DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.生年月日DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.InsdataSet11 = new 名簿.DataSet1();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.InsTableAdapter1 = new 名簿.DataSet1TableAdapters.TableTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -54,48 +55,16 @@
             this.クラス番号DataGridViewTextBoxColumn,
             this.苗字DataGridViewTextBoxColumn,
             this.名前DataGridViewTextBoxColumn,
-            this.生年月日DataGridViewTextBoxColumn,
-            this.性別DataGridViewTextBoxColumn});
+            this.性別DataGridViewTextBoxColumn,
+            this.生年月日DataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.tableBindingSource;
+            this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dataGridView1.Location = new System.Drawing.Point(12, 45);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 21;
             this.dataGridView1.Size = new System.Drawing.Size(383, 295);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "4件見つかりました。";
-            this.label1.UseMnemonic = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(319, 359);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // InsdataSet11
-            // 
-            this.InsdataSet11.DataSetName = "DataSet1";
-            this.InsdataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // InsTableAdapter1
-            // 
-            this.InsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableBindingSource
-            // 
-            this.tableBindingSource.DataMember = "Table";
-            this.tableBindingSource.DataSource = this.InsdataSet11;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // クラス番号DataGridViewTextBoxColumn
             // 
@@ -115,17 +84,51 @@
             this.名前DataGridViewTextBoxColumn.HeaderText = "名前";
             this.名前DataGridViewTextBoxColumn.Name = "名前DataGridViewTextBoxColumn";
             // 
+            // 性別DataGridViewTextBoxColumn
+            // 
+            this.性別DataGridViewTextBoxColumn.DataPropertyName = "性別";
+            this.性別DataGridViewTextBoxColumn.HeaderText = "性別";
+            this.性別DataGridViewTextBoxColumn.Name = "性別DataGridViewTextBoxColumn";
+            // 
             // 生年月日DataGridViewTextBoxColumn
             // 
             this.生年月日DataGridViewTextBoxColumn.DataPropertyName = "生年月日";
             this.生年月日DataGridViewTextBoxColumn.HeaderText = "生年月日";
             this.生年月日DataGridViewTextBoxColumn.Name = "生年月日DataGridViewTextBoxColumn";
             // 
-            // 性別DataGridViewTextBoxColumn
+            // tableBindingSource
             // 
-            this.性別DataGridViewTextBoxColumn.DataPropertyName = "性別";
-            this.性別DataGridViewTextBoxColumn.HeaderText = "性別";
-            this.性別DataGridViewTextBoxColumn.Name = "性別DataGridViewTextBoxColumn";
+            this.tableBindingSource.DataMember = "Table";
+            this.tableBindingSource.DataSource = this.InsdataSet11;
+            // 
+            // InsdataSet11
+            // 
+            this.InsdataSet11.DataSetName = "DataSet1";
+            this.InsdataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 12);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "件見つかりました。";
+            this.label1.UseMnemonic = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(319, 359);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // InsTableAdapter1
+            // 
+            this.InsTableAdapter1.ClearBeforeFill = true;
             // 
             // DateForm
             // 
@@ -139,8 +142,8 @@
             this.Text = "クラス名簿管理システム";
             this.Load += new System.EventHandler(this.DateForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InsdataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,13 +154,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private DataSet1 InsdataSet11;
-        private DataSet1TableAdapters.TableTableAdapter InsTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn クラス番号DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 苗字DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 名前DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 生年月日DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 性別DataGridViewTextBoxColumn;
+        private DataSet1TableAdapters.TableTableAdapter InsTableAdapter1;
+        private DataSet1 InsdataSet11;
         private System.Windows.Forms.BindingSource tableBindingSource;
     }
 }

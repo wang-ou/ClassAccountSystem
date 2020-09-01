@@ -81,6 +81,7 @@ namespace 名簿
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(87, 21);
             this.nameBox.TabIndex = 3;
+            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
             this.nameBox.Enter += new System.EventHandler(this.nameBox_Enter);
             // 
             // Regbutton

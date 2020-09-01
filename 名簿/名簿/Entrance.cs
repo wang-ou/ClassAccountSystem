@@ -33,5 +33,11 @@ namespace 名簿
         {
 
         }
+
+        private void OpenListbutton_Click(object sender, EventArgs e)
+        {
+            DateForm datef = new DateForm();
+            datef.ShowDialog();
+        }
     }
 }
